@@ -1,28 +1,23 @@
 #include <bits/stdc++.h>
 using namespace std;
+#define ll long long
 
-int fibo(int n){
-	if(n <= 1) 
-		return n;
+//NOTE This is a very simple template for beginners
 
-	int ans2 = fibo(n - 2);
-	int ans1 = fibo(n - 1);
+void solution() {
+	//Your Code Here
 
-	return ( ans2 + ans1 );
 }
 
 int main(){
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
 
-	int n;
-	cin>>n;
-	for (int i = 0; i < n; i++)
-	{
-
-		cout<<fibo(i)<<" ";
+	int t;
+	cin>>t;
+	while(t--){
+		solution();
 	}
-	
-	
+
 	return 0;
 }
