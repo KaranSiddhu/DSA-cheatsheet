@@ -14,7 +14,7 @@ int main(){
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
 
-	int a[] = {4, 3, 4, 4, 4, 5, 5};
+	int a[] = {1, 2, 3, 2, 3, 1, 3};
   int n = sizeof(a) / sizeof(a[0]);
 
   cout<<oneOddOccuring(a, n);

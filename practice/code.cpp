@@ -3,21 +3,11 @@ using namespace std;
 #define ll long long
 
 //NOTE This is a very simple template for beginners
-
-void solution() {
-	//Your Code Here
-
+void solution(){
+    //Your Code Here
 }
 
 int main(){
-	ios_base::sync_with_stdio(false);
-	cin.tie(NULL);
-
-	int t;
-	cin>>t;
-	while(t--){
-		solution();
-	}
-
-	return 0;
+    
+    return 0;
 }
