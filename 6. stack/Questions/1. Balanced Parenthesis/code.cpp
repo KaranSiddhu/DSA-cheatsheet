@@ -87,31 +87,34 @@ bool isBalanced(string s) {
     if(s[i] == '}'){
       if(s1.top() == '{') 
         s1.pop();
-      else return false;
+      else 
+        return false;
     }
 
     if(s[i] == ')'){
       if(s1.top() == '(') 
         s1.pop();
-      else return false;
+      else 
+        return false;
     }
 
     if(s[i] == ']'){
       if(s1.top() == '[') 
         s1.pop();
-      else return false;
+      else 
+        return false;
     }
 
   }
 
-  if(s1.isEmpty()) return true;
-
-  else return false;
+  if(s1.isEmpty()) 
+    return true;
+  else 
+    return false;
 }
 
 int main(){
   
-
   string s;
   getline(cin, s);
 
