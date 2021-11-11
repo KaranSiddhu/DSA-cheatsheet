@@ -55,7 +55,8 @@ public:
   }
 
   T top(){
-    if(isEmpty()) return 0;
+    if(isEmpty()) 
+      return 0;
     return head -> data;
   }
   
