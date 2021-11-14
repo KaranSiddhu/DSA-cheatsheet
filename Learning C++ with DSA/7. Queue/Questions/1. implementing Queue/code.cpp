@@ -172,7 +172,6 @@ public:
 };
 
 int main(){
-
   Queue<int> q;
 
   q.enqueue(10);

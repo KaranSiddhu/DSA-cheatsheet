@@ -4,10 +4,11 @@ using namespace std;
 
 //NOTE This is a very simple template for beginners
 void solution(){
-    //Your Code Here
+  //Your Code Here
+
 }
 
 int main(){
-    
-    return 0;
+
+  return 0;
 }
