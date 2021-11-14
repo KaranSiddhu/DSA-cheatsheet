@@ -11,6 +11,11 @@ public:
   TreeNode(T data){
     this -> data = data;
   }
+
+  ~TreeNode()  {
+    for (int i = 0; i < children.size(); i++)
+      delete children[i];
+  }
 };
 
 TreeNode<int>* takeInput(){
@@ -131,7 +136,6 @@ int main(){
 
   printTreeLevelWise(root);  
 
-
 /*NOTE -> dynamically allocating
   TreeNode<int>* root = new TreeNode<int>(1);  
   TreeNode<int>* node1 = new TreeNode<int>(2);  
@@ -154,5 +158,6 @@ int main(){
 
   printTree(&root);
 */
+  
   return 0;
 }
