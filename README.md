@@ -1,7 +1,7 @@
 # DSA CheatSheet
 This **cheatsheet** offers a step-by-step guidance on how to study DSA, including which questions to practice and in what order to practice them.
 
-- This **CheatSheet** include topics like **Arrays**, **LikedList**, **Stack** and **many more** (See the table below)
+- This **CheatSheet** include topics like **Arrays**, **LikedList**, **Stack** and **many more** (See the [table](https://github.com/karan320/DSA-cheatsheet#content) below)
 - This **CheatSheet** will also cover **Love Babbar DSA sheet** (which contains **450 questions**)
 
 ## Getting Started
