@@ -97,6 +97,8 @@ int main(){
   printNodeLevelWise(root);
 
   cout << "Sum of all nodes in a tree is " << sumOfNodes(root);
-  
+
+  delete root;
+
   return 0;
 }

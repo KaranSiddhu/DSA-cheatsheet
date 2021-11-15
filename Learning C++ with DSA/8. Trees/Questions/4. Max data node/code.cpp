@@ -102,5 +102,7 @@ int main(){
 
   cout << "Max Data Node is " << maxDataNode(root) -> data;
   
+  delete root;
+
   return 0;
 }

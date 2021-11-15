@@ -98,5 +98,7 @@ int main(){
 
   cout << "Size of tree is " << countNodes(root);
   
+  delete root;
+
   return 0;
 }

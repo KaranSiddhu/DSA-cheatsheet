@@ -2,6 +2,8 @@
 using namespace std;
 #define ll long long
 
+//Ques - Count total number of Leaf nodes.
+
 template <typename T>
 class TreeNode{
 public:
@@ -20,7 +22,7 @@ public:
 
 TreeNode<int>* takeInputLevelWise(){
   int rootData;
-  cout << "Enter root data:\n";
+  cout << "Enter Root Data:\n";
   cin >> rootData;
 
   TreeNode<int>* root = new TreeNode<int>(rootData);
@@ -29,16 +31,16 @@ TreeNode<int>* takeInputLevelWise(){
   pendingNode.push(root);
 
   while(!pendingNode.empty()){
-    TreeNode<int> * front = pendingNode.front();
+    TreeNode<int>* front = pendingNode.front();
     pendingNode.pop();
 
     int numChild;
-    cout << "Enter total number of children of " << front -> data << "\n";
+    cout << "Enter the number of children of " << front -> data << "\n";
     cin >> numChild;
 
     for(int i = 0; i < numChild; i++){
       int childData;
-      cout << "Enter the " << i << "th child of " << front -> data << "\n";
+      cout << "Enter " << i << "th child of " << front -> data << "\n";
       cin >> childData;
 
       TreeNode<int>* child = new TreeNode<int>(childData);
@@ -52,12 +54,11 @@ TreeNode<int>* takeInputLevelWise(){
 }
 
 void printTreeLevelWise(TreeNode<int>* root){
-
   queue<TreeNode<int>*> pendingNode;
   pendingNode.push(root);
 
   while(!pendingNode.empty()){
-    TreeNode<int> * front = pendingNode.front();
+    TreeNode<int>* front = pendingNode.front();
     pendingNode.pop();
 
     cout << front -> data << ":";
@@ -65,40 +66,40 @@ void printTreeLevelWise(TreeNode<int>* root){
     for(int i = 0; i < front -> children.size(); i++){
       pendingNode.push(front -> children[i]);
 
-      if(i == (front -> children.size() - 1))
+      if(i == (front -> children.size() - 1 ))
         cout << front -> children[i] -> data;
-      else 
+      else
         cout << front -> children[i] -> data << ",";
     }
     cout << "\n";
   }
-
 }
 
-int heightOfTree(TreeNode<int>* root){
-  if(root == NULL)
+int countLeaf(TreeNode<int>* root){
+
+  if(root == NULL);
     return -1;
+
+  if(root -> children.size() == 0)
+    return 1;
   
   int ans = 0;
   for(int i = 0; i < root -> children.size(); i++){
-    int childHeight = heightOfTree(root -> children[i]);
-
-    if(childHeight > ans){
-      ans = childHeight;
-    }
+    ans += countLeaf(root -> children[i]);
   }
 
-  return ans+1;
+  return ans;
 }
 
 int main(){
+
   TreeNode<int>* root = takeInputLevelWise();
 
   printTreeLevelWise(root);
 
-  cout << "Height of tree is - " << heightOfTree(root);
+  cout << "Leaf node of tree is " << countLeaf(root);
 
   delete root;
-
+  
   return 0;
 }

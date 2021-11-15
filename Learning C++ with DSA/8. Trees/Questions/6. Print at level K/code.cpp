@@ -2,6 +2,8 @@
 using namespace std;
 #define ll long long
 
+//Ques - Print the level k or depth k
+
 template <typename T>
 class TreeNode{
 public:
@@ -75,20 +77,20 @@ void printTreeLevelWise(TreeNode<int>* root){
 
 }
 
-int heightOfTree(TreeNode<int>* root){
-  if(root == NULL)
-    return -1;
-  
-  int ans = 0;
-  for(int i = 0; i < root -> children.size(); i++){
-    int childHeight = heightOfTree(root -> children[i]);
+void printAtLevelK(TreeNode<int>* root, int k){
 
-    if(childHeight > ans){
-      ans = childHeight;
-    }
+  if(root == NULL)
+    return;
+
+  if(k == 0){
+    cout << root -> data << " \n"; 
+    return;
   }
 
-  return ans+1;
+  for(int i = 0; i < root -> children.size(); i++){
+    printAtLevelK(root -> children[i], k-1);
+  }
+
 }
 
 int main(){
@@ -96,7 +98,10 @@ int main(){
 
   printTreeLevelWise(root);
 
-  cout << "Height of tree is - " << heightOfTree(root);
+  int k;
+  cout << "Print the level that you want to print:\n";
+  cin >> k;
+  printAtLevelK(root, k);
 
   delete root;
 

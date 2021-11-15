@@ -2,6 +2,8 @@
 using namespace std;
 #define ll long long
 
+//Now we will learn how to print our tree in preorder and postorder
+
 template <typename T>
 class TreeNode{
 public:
@@ -20,7 +22,7 @@ public:
 
 TreeNode<int>* takeInputLevelWise(){
   int rootData;
-  cout << "Enter root data:\n";
+  cout << "Enter Root Data:\n";
   cin >> rootData;
 
   TreeNode<int>* root = new TreeNode<int>(rootData);
@@ -29,16 +31,16 @@ TreeNode<int>* takeInputLevelWise(){
   pendingNode.push(root);
 
   while(!pendingNode.empty()){
-    TreeNode<int> * front = pendingNode.front();
+    TreeNode<int>* front = pendingNode.front();
     pendingNode.pop();
 
     int numChild;
-    cout << "Enter total number of children of " << front -> data << "\n";
+    cout << "Enter the number of children of " << front -> data << "\n";
     cin >> numChild;
 
     for(int i = 0; i < numChild; i++){
       int childData;
-      cout << "Enter the " << i << "th child of " << front -> data << "\n";
+      cout << "Enter " << i << "th child of " << front -> data << "\n";
       cin >> childData;
 
       TreeNode<int>* child = new TreeNode<int>(childData);
@@ -52,12 +54,11 @@ TreeNode<int>* takeInputLevelWise(){
 }
 
 void printTreeLevelWise(TreeNode<int>* root){
-
   queue<TreeNode<int>*> pendingNode;
   pendingNode.push(root);
 
   while(!pendingNode.empty()){
-    TreeNode<int> * front = pendingNode.front();
+    TreeNode<int>* front = pendingNode.front();
     pendingNode.pop();
 
     cout << front -> data << ":";
@@ -65,40 +66,67 @@ void printTreeLevelWise(TreeNode<int>* root){
     for(int i = 0; i < front -> children.size(); i++){
       pendingNode.push(front -> children[i]);
 
-      if(i == (front -> children.size() - 1))
+      if(i == (front -> children.size() - 1 ))
         cout << front -> children[i] -> data;
-      else 
+      else
         cout << front -> children[i] -> data << ",";
     }
     cout << "\n";
   }
-
 }
 
-int heightOfTree(TreeNode<int>* root){
-  if(root == NULL)
-    return -1;
+//NOTE Preorder Traversal
+void preorder(TreeNode<int>* root){
   
-  int ans = 0;
-  for(int i = 0; i < root -> children.size(); i++){
-    int childHeight = heightOfTree(root -> children[i]);
+  if(root == NULL)
+    return;
 
-    if(childHeight > ans){
-      ans = childHeight;
-    }
+  cout << root -> data << " ";
+
+  for(int i = 0; i < root -> children.size(); i++){
+    preorder(root -> children[i]);
+  }
+}
+
+//NOTE Postorder Traversal
+void postorder(TreeNode<int>* root){
+  
+
+  for(int i = 0; i < root -> children.size(); i++){
+    preorder(root -> children[i]);
   }
 
-  return ans+1;
+  cout << root -> data << " ";
 }
 
+/*NOTE just copy paste below line, so that we wont have to fill value manually
+1 3 2 3 4 2 5 6 2 7 8 0 0 0 0 1 9 0 
+
+Tree is going to look like this 👇
+1:2,3,4
+2:5,6
+3:7,8
+4:
+5:
+6:
+7:
+8:9
+9:
+*/
 int main(){
+
   TreeNode<int>* root = takeInputLevelWise();
 
   printTreeLevelWise(root);
 
-  cout << "Height of tree is - " << heightOfTree(root);
+  cout << "Preorder - "; 
+  preorder(root); 
+
+  cout << "\n";
+
+  cout << "Postorder - "; 
+  postorder(root); 
 
   delete root;
-
   return 0;
 }

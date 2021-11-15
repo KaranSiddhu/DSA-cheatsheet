@@ -136,6 +136,8 @@ int main(){
 
   printTreeLevelWise(root);  
 
+  delete root;
+
 /*NOTE -> dynamically allocating
   TreeNode<int>* root = new TreeNode<int>(1);  
   TreeNode<int>* node1 = new TreeNode<int>(2);  
