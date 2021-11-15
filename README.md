@@ -7,7 +7,7 @@ This **cheatsheet** offers a step-by-step guidance on how to study DSA, includin
 ## Getting Started
 >"A dream written down with a date becomes a goal. A goal broken down into steps becomes a plan. A plan backed by action makes your dreams come true." - **Greg Reid**
 
-1. Download Vscode and setup C++ environment (Follow [this]((https://www.youtube.com/watch?v=0yn7irrHzM8)) youtube tutorial)
+1. Download Vscode and setup C++ environment (Follow [this](https://www.youtube.com/watch?v=0yn7irrHzM8) youtube tutorial)
 
 2. Download these extensions
     - [C/C++ for visual studio code](https://code.visualstudio.com/docs/languages/cpp)
