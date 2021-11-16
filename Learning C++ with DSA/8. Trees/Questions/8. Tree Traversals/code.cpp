@@ -91,6 +91,8 @@ void preorder(TreeNode<int>* root){
 //NOTE Postorder Traversal
 void postorder(TreeNode<int>* root){
   
+  if(root == NULL)
+    return;
 
   for(int i = 0; i < root -> children.size(); i++){
     preorder(root -> children[i]);
