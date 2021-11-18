@@ -4,7 +4,7 @@ using namespace std;
 
 class Node{
 public:
-  int data;
+  int data; 
   Node *next;
 
   Node(int data){
@@ -20,7 +20,7 @@ Node *takeInput(){
   Node *head = NULL;
   Node *tail = NULL;
 
-  while (data != -1){
+  while(data != -1){
     Node *newNode = new Node(data);
 
     if (head == NULL){
@@ -46,33 +46,6 @@ void print(Node *head){
   cout << "NULL" << "\n";
 }
 
-Node *insertNode(Node *head, int i, int data){
-  Node *newNode = new Node(data);
-  int count = 0;
-  Node *temp = head;
-
-  if (i == 0)
-  {
-    newNode->next = head;
-    head = newNode;
-    return head;
-  }
-
-  while (temp != NULL && count < i - 1)
-  {
-    temp = temp->next;
-    count++;
-  }
-
-  if (temp != NULL)
-  {
-    newNode->next = temp->next;
-    temp->next = newNode;
-  }
-
-  return head;
-}
-
 int length(Node *head){
   int c = 0;
   Node *temp = head;
@@ -83,40 +56,6 @@ int length(Node *head){
   }
 
   return c;
-}
-
-Node *deleteNode(Node *head, int i){
-  int count = 0;
-  Node *temp = head;
-
-  if (head == NULL)
-    return head;
-
-  if (i == 0){
-    head = temp->next;
-    delete temp;
-
-    return head;
-  }
-
-  if (i >= length(head)){
-    return head;
-  }
-
-  while (temp != NULL && count < i - 1){
-    temp = temp->next;
-    count++;
-  }
-
-  if (temp != NULL){
-    Node *a = temp->next;
-    Node *b = a->next;
-    temp->next = b;
-
-    delete a;
-  }
-
-  return head;
 }
 
 void printMiddle(Node *head){
@@ -140,7 +79,6 @@ int main(){
   Node *head = takeInput();
   print(head);
 
-  printMiddle(head);  
 
   return 0;
 }
