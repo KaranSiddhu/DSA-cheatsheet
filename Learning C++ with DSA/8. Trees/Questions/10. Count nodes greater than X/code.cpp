@@ -2,16 +2,16 @@
 using namespace std;
 #define ll long long
 
-/*Ques - Given a tree and an number x, check if x is present in the given tree or not.
+/*Ques - Given a tree and a number x, find and return the number of nodes which are greater than x. 
 
 I/p
 1: 2, 3, 4
 2: 
 3: 
 4:
-3
+2
 O/P
-True
+2
 
 */
 template <typename T>
@@ -84,20 +84,19 @@ void printTreeLevelWise(TreeNode<int>* root){
   }
 }
 
-bool findXinTree(TreeNode<int>* root, int x){
-
+int getLargeNodeCount(TreeNode<int>* root, int x){
   if(root == NULL)
-    return false;
-
-  if(x == root -> data)
-    return true;
+    return 0;
+  
+  int c = 0;
+  if(root -> data > x)
+    c++;
 
   for(int i = 0; i < root -> children.size(); i++){
-    if(findXinTree(root -> children[i], x))
-      return true;
+    c += getLargeNodeCount(root -> children[i], x);
   }
 
-  return false;
+  return c;
 }
 
 int main(){
@@ -107,12 +106,10 @@ int main(){
   printTreeLevelWise(root);
 
   int x;
-  cout << "Enter the value to find in a tree:\n";
+  cout << "Enter the value of X:\n";
   cin >> x;
 
-  string ans = findXinTree(root, x) ? "True" : "False";
-
-  cout << ans;
+  cout << getLargeNodeCount(root, x);
 
   delete root;
 
