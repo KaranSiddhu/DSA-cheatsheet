@@ -5,7 +5,6 @@ using namespace std;
 //NOTE This is a very simple template for beginners
 void solution(){
   //Your Code Here
-
 }
 
 int main(){

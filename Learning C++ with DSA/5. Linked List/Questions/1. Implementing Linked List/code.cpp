@@ -2,26 +2,27 @@
 using namespace std;
 #define ll long long
 
+template <typename T>
 class Node{
 public:
-  int data; 
-  Node *next;
+  T data; 
+  Node<T> *next;
 
-  Node(int data){
+  Node(T data){
     this->data = data;
     next = NULL;
   }
 };
 
-Node *takeInput(){
+Node<int> *takeInput(){
   int data;
   cin >> data;
 
-  Node *head = NULL;
-  Node *tail = NULL;
+  Node<int> *head = NULL;
+  Node<int> *tail = NULL;
 
   while(data != -1){
-    Node *newNode = new Node(data);
+    Node<int> *newNode = new Node<int>(data);
 
     if (head == NULL){
       head = newNode;
@@ -37,8 +38,8 @@ Node *takeInput(){
   return head;
 }
 
-void print(Node *head){
-  Node *temp = head;
+void print(Node<int> *head){
+  Node<int> *temp = head;
   while (temp != NULL){
     cout << temp->data << " -> ";
     temp = temp->next;
@@ -46,39 +47,10 @@ void print(Node *head){
   cout << "NULL" << "\n";
 }
 
-int length(Node *head){
-  int c = 0;
-  Node *temp = head;
-
-  while (temp){
-    c++;
-    temp = temp->next;
-  }
-
-  return c;
-}
-
-void printMiddle(Node *head){
-  int l = length(head);
-  Node *temp = head;
-  int c = 0;
-
-  int midIndex = (l - 1)/2;
-
-  while(temp){
-    if(c == midIndex)
-      cout << "Middle Element is " << temp -> data << "\n";
-    c++;
-    temp = temp -> next;
-  }
-
-}
-
 int main(){
 
-  Node *head = takeInput();
+  Node<int> *head = takeInput();
   print(head);
-
 
   return 0;
 }
