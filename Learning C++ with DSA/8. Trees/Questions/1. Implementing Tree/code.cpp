@@ -45,7 +45,6 @@ TreeNode<int>* takeInputLevelWise(){
   TreeNode<int>* root = new TreeNode<int>(rootData);  
   
   queue<TreeNode<int> *> pendingNodes;
-
   pendingNodes.push(root);
 
   while(pendingNodes.size() != 0){
@@ -138,28 +137,5 @@ int main(){
 
   delete root;
 
-/*NOTE -> dynamically allocating
-  TreeNode<int>* root = new TreeNode<int>(1);  
-  TreeNode<int>* node1 = new TreeNode<int>(2);  
-  TreeNode<int>* node2 = new TreeNode<int>(3);  
-
-  root -> children.push_back(node1);
-  root -> children.push_back(node2);
-
-  printTree(root);
-
-*/
-
-/*NOTE -> Statically allocating
-  TreeNode<int> root(1);  
-  TreeNode<int> node1(2);  
-  TreeNode<int> node2(3); 
-
-  root.children.push_back(&node1);
-  root.children.push_back(&node2);
-
-  printTree(&root);
-*/
-  
   return 0;
 }
