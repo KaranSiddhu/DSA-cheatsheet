@@ -2,6 +2,23 @@
 using namespace std;
 #define ll long long
 
+/*Ques - Given a binary tree and integer n, find the integer n.
+INPUT -
+1: L:2 R:3
+2: L:4 R:5
+3: L:6 R:7
+4:
+5:
+6: L:8 R:9
+7:
+8:
+9:
+n = 6
+
+OUTPUT - 
+True
+*/
+
 template <typename T>
 class BinaryTreeNode{
 public:
@@ -79,13 +96,6 @@ void printTreeLevelWise(BinaryTreeNode<int>* root){
     }
     cout << "\n";
   }
-}
-
-int countNodes(BinaryTreeNode<int>* root){
-  if(root == NULL)
-    return 0;
-
-  return 1 + countNodes(root -> left) + countNodes(root -> right);
 }
 
 bool isNodePresent(BinaryTreeNode<int> *root, int x) {
