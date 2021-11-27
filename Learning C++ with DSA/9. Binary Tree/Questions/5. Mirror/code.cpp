@@ -2,7 +2,7 @@
 using namespace std;
 #define ll long long
 
-/*Ques - Given a binary tree and integer n, find the integer n.
+/*Ques - Mirror the given binary tree.
 INPUT -
 1: L:2 R:3
 2: L:4 R:5
@@ -13,10 +13,17 @@ INPUT -
 7:
 8:
 9:
-n = 6
 
 OUTPUT - 
-True
+1: L:3 R:2
+3: L:7 R:6
+2: L:5 R:4
+7:
+6: L:9 R:8
+5:
+4:
+9:
+8:
 */
 
 template <typename T>
@@ -98,11 +105,10 @@ void printTreeLevelWise(BinaryTreeNode<int>* root){
   }
 }
 
+/*NOTE - Recursive solution
+Time complexity - O(n)
+Space complexity - O(h), h is height of tree*/
 void mirror(BinaryTreeNode<int>* root){
-
-  //NOTE - Recursive solution
-  //Time complexity - O(n)
-  //Space complexity - O(h), h is height of tree
   if(root == NULL)
     return;
 
@@ -113,11 +119,13 @@ void mirror(BinaryTreeNode<int>* root){
   temp = root -> left;
   root -> left = root -> right;
   root -> right = temp;
+}
 
-  /*NOTE Iterative solution using queue
-  Time complexity - O(n)
-  Space complexity - O(n)
-  
+/*NOTE Iterative solution using queue (Level Order Traversal)
+Time complexity - O(n)
+Space complexity - O(n)  
+void mirror(BinaryTreeNode<int>* root){
+ 
   queue<BinaryTreeNode<int>*> pendingNodes;
   pendingNodes.push(root);
 
@@ -133,8 +141,8 @@ void mirror(BinaryTreeNode<int>* root){
     if(front -> right)
       pendingNodes.push(front -> right);
   }
-  */
 }
+*/
  
 //1 2 3 4 5 6 7 -1 -1 -1 -1 8 9 -1 -1 -1 -1 -1 -1
 int main(){
