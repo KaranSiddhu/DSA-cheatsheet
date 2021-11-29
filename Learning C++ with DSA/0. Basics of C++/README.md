@@ -1,0 +1,1 @@
+# Here's the [link](https://thunder-ermine-fd2.notion.site/C-Notes-3b11bd9c6eb14287a9a0d582f9d5e1a6) to the C++ Notes I made in Notion.
