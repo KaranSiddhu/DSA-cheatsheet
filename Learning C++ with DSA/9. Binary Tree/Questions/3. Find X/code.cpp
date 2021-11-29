@@ -99,7 +99,6 @@ void printTreeLevelWise(BinaryTreeNode<int>* root){
 }
 
 bool isNodePresent(BinaryTreeNode<int> *root, int x) {
-
   if(root == NULL)
     return false;
 

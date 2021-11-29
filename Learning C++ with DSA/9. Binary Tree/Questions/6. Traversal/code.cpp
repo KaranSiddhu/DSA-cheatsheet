@@ -137,8 +137,6 @@ int main(){
   cout << "In Order Traversal - \n";
   inOrderTraversal(root);
 
-  
-
   delete root;
   return 0;
 }
