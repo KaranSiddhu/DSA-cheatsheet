@@ -28,25 +28,15 @@ The below table includes all the topics that is in [Learning C++ with DSA](https
 | S.No | Topics | 
 | ------ | ------ |
 | 1 | [Mathematics](https://github.com/karan320/DSA-cheatsheet/tree/master/Learning%20C%2B%2B%20with%20DSA/1.%20Mathematics) | 
-
 | 2 | [Bit Magic](https://github.com/karan320/DSA-cheatsheet/tree/master/Learning%20C%2B%2B%20with%20DSA/2.%20Bit%20Magic) | 
-
 | 3 |  [Recursion](https://github.com/karan320/DSA-cheatsheet/tree/master/Learning%20C%2B%2B%20with%20DSA/3.%20Recursion) | 
-
 | 4 | [Arrays](https://github.com/karan320/DSA-cheatsheet/tree/master/Learning%20C%2B%2B%20with%20DSA/4.%20Arrays/Arrays%20problem%20for%20intterview) | 
-
 | 5 | [Linked List](https://github.com/karan320/DSA-cheatsheet/tree/master/Learning%20C%2B%2B%20with%20DSA/5.%20Linked%20List) | 
-
 | 6 | [Stack](https://github.com/karan320/DSA-cheatsheet/tree/master/Learning%20C%2B%2B%20with%20DSA/6.%20stack) | 
-
 | 7 | [Queue](https://github.com/karan320/DSA-cheatsheet/tree/master/Learning%20C%2B%2B%20with%20DSA/7.%20Queue) |
-
-| 9 | [Trees](https://github.com/karan320/DSA-cheatsheet/tree/master/Learning%20C%2B%2B%20with%20DSA/8.%20Trees) |
-
-| 10 | [Binary Tree](https://github.com/karan320/DSA-cheatsheet/tree/master/Learning%20C%2B%2B%20with%20DSA/9.%20Binary%20Tree) |
-
+| 8 | [Trees](https://github.com/karan320/DSA-cheatsheet/tree/master/Learning%20C%2B%2B%20with%20DSA/8.%20Trees) |
+| 9 | [Binary Tree](https://github.com/karan320/DSA-cheatsheet/tree/master/Learning%20C%2B%2B%20with%20DSA/9.%20Binary%20Tree) |
 | 10 | [Algorithms](https://github.com/karan320/DSA-cheatsheet/tree/master/Learning%20C%2B%2B%20with%20DSA/Algorithms/Sorting) |
-
 
 ## Connect With Me
   <a href="https://www.linkedin.com/in/karan-siddhu-040014194//">
