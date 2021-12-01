@@ -8,13 +8,13 @@ Input - 1 3 2 -1 -1 -1 -1
 Output - 1 3 2
 */
 
-template <typename T> class Node{
+class Node{
 public:
-  T data;
+  int data;
   Node* left;
   Node* right;
 
-  Node(T data){
+  Node(int data){
     this -> data = data;
     left = right = NULL;
   }
@@ -25,18 +25,18 @@ public:
   }
 };
 
-Node<int>* buildBinaryTree(){
+Node* buildBinaryTree(){
   int rootData;
   cout << "Enter root data - ";
   cin >> rootData;
 
-  Node<int>* root = new Node<int>(rootData);
+  Node* root = new Node(rootData);
 
-  queue<Node<int>*> pendingNodes;
+  queue<Node*> pendingNodes;
   pendingNodes.push(root);
 
   while(!pendingNodes.empty()){
-    Node<int>* front = pendingNodes.front();
+    Node* front = pendingNodes.front();
     pendingNodes.pop();
 
     int leftData;
@@ -44,7 +44,7 @@ Node<int>* buildBinaryTree(){
     cin >> leftData;
 
     if(leftData != -1){
-      Node<int>* leftChild = new Node<int>(leftData);
+      Node* leftChild = new Node(leftData);
       front -> left = leftChild;
       pendingNodes.push(leftChild);
     }
@@ -54,7 +54,7 @@ Node<int>* buildBinaryTree(){
     cin >> rightData;
 
     if(rightData != -1){
-      Node<int>* rightChild = new Node<int>(rightData);
+      Node* rightChild = new Node(rightData);
       front -> right = rightChild;
       pendingNodes.push(rightChild);
     }
@@ -63,34 +63,40 @@ Node<int>* buildBinaryTree(){
   return root;
 }
 
-void solution(Node<int>* root){
-  queue<Node<int>*> pendingNodes;
-  pendingNodes.push(root);
-  
-  cout << root -> data << " "; 
-  
-  while(!pendingNodes.empty()){
-    Node<int>* front = pendingNodes.front();
-    pendingNodes.pop();
+vector<int> levelOrder(Node* root){
 
+  vector<int> ans;
+  ans.push_back(root -> data);
+  
+  queue<Node*> pendingNodes;
+  pendingNodes.push(root);
+      
+  while(!pendingNodes.empty()){
+    Node* front = pendingNodes.front();
+    pendingNodes.pop();
+          
     if(front -> left){
-      cout << front -> left -> data << " ";
+      ans.push_back(front -> left -> data);
       pendingNodes.push(front -> left);
     }
-    
+          
     if(front -> right){
-      cout << front -> right -> data << " ";
+      ans.push_back(front -> right -> data);
       pendingNodes.push(front -> right);
     }
   }
-  cout << "\n";
+      
+  return ans;
 }
 
 int main(){
 
-  Node<int>* root = buildBinaryTree();
+  Node* root = buildBinaryTree();
 
-  solution(root);
+  vector<int> ans = levelOrder(root);
+
+  for(int e : ans)
+    cout << e << " ";
 
   delete root;
   return 0;
