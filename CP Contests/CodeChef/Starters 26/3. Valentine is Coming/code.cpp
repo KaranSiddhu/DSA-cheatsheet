@@ -5,10 +5,10 @@ using namespace std;
 #define ld long double
 
 void solution(){
-  int x,y;
+  int x, y;
   cin >> x >> y;
-
-  cout << ((x > y ? "CAR" : (x == y ? "SAME" : "BIKE")  )) << "\n";
+  
+  cout << (x/y) << "\n";
 }
 
 int main(){
@@ -19,6 +19,6 @@ int main(){
   cin >> t;
   while(t--)
     solution();
-
+  
   return 0;
 }

@@ -5,10 +5,22 @@ using namespace std;
 #define ld long double
 
 void solution(){
-  int x,y;
-  cin >> x >> y;
+  int n, x;
+  cin >> n >> x;
 
-  cout << ((x > y ? "CAR" : (x == y ? "SAME" : "BIKE")  )) << "\n";
+  int arr[n];
+  for(int i = 0; i < n; i++)
+    cin >> arr[i];
+
+  int max = x;
+  for(int i = 0; i < n; i++){
+    x += arr[i];
+    
+    if(x > max)
+      max = x;
+  }
+
+  cout<< max << "\n";
 }
 
 int main(){
@@ -19,6 +31,6 @@ int main(){
   cin >> t;
   while(t--)
     solution();
-
+  
   return 0;
 }
