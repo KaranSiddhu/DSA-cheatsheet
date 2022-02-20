@@ -3,12 +3,13 @@ using namespace std;
 #define ll long long
 #define db double
 #define ld long double
+#define el "\n"
 
 void solution(){
   int n;
   cin >> n;
 
-  cout << (n*10)<<"\n";
+  cout << (n*10)<<el;
 }
 
 int main(){
