@@ -3,6 +3,7 @@ using namespace std;
 #define ll long long
 #define db double
 #define ld long double
+#define el "\n"
 
 void solution(){
   int n;
@@ -14,7 +15,7 @@ void solution(){
     sum += b;
   }
 
-  cout << ((sum % 2 == 0) ? "YES" : "NO" ) << "\n";
+  cout << ((sum % 2 == 0) ? "YES" : "NO" ) << el;
 
 }
 

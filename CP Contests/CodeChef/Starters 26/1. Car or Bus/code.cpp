@@ -3,12 +3,13 @@ using namespace std;
 #define ll long long
 #define db double
 #define ld long double
+#define el "\n"
 
 void solution(){
   int x,y;
   cin >> x >> y;
 
-  cout << ((x > y ? "CAR" : (x == y ? "SAME" : "BIKE")  )) << "\n";
+  cout << ((x > y ? "CAR" : (x == y ? "SAME" : "BIKE")  )) << el;
 }
 
 int main(){

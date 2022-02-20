@@ -3,6 +3,7 @@ using namespace std;
 #define ll long long
 #define db double
 #define ld long double
+#define el "\n"
 
 void solution(){
   int n, x;
@@ -20,7 +21,7 @@ void solution(){
       max = x;
   }
 
-  cout<< max << "\n";
+  cout<< max << el;
 }
 
 int main(){

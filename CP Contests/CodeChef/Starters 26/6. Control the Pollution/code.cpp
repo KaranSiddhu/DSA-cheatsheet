@@ -6,10 +6,18 @@ using namespace std;
 #define el "\n"
 
 void solution(){
-  int x, y;
-  cin >> x >> y;
-  
-  cout << (x/y) << el;
+  int n,x,y;
+  cin >> n >> x >> y;
+
+  int ans = INT32_MAX;
+
+  for(int bus = 0; bus <= ceil(n / 100.0); bus++){
+    int cars = max((double)0, ceil((n-bus*100) / 4.0));
+    int smoke = bus * x + cars * y;
+    ans = min(ans, smoke);
+  }
+
+  cout << ans << el;
 }
 
 int main(){
