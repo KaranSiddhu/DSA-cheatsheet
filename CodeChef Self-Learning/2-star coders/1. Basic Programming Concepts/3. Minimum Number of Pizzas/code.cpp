@@ -5,18 +5,24 @@ using namespace std;
 #define ld long double
 #define el "\n"
 
-//NOTE This is a very simple template for beginners
+
 void solution(){
-  cout << "Your Code Here";
+  int n, k;
+  cin >> n >> k;
+
+  int ans = n/__gcd(n,k);
+
+  cout << ans << el;
 }
 
 int main(){
   ios_base::sync_with_stdio(false);
   cin.tie(NULL);
 
+
   int t;
   cin >> t;
-  while(t--)
+  while (t--)
     solution();
 
   return 0;
