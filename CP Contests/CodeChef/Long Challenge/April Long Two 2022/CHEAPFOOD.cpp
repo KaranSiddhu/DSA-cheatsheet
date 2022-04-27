@@ -6,13 +6,17 @@ using namespace std;
 #define el "\n"
 
 void solution(){
-  int n;
-  cin >> n;
-  
-  for(int i = 1; i < n; i++)
-    cout << i+1 << " ";
+  int bill;
+  cin >> bill;
 
-  cout << 1 << el;
+  int c1 = 100;
+  int c2 = bill / 10;
+
+  if(c1 > c2)
+    cout << c1 << "\n";
+  else
+    cout << c2 << "\n";
+
 }
 
 int main(){

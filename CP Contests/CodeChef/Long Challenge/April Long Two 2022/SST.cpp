@@ -6,24 +6,18 @@ using namespace std;
 #define el "\n"
 
 void solution(){
-  int n;
-  cin >> n;
+  int a, b;
+  cin >> a >> b;
 
-  for (int i = 1; i <= n; i++){
-    if (n == 1){
-      cout << "3";
-      break;
-    }
+  int e1 = a * 10;
+  int e2 = b * 5;
 
-    if (i == 1)
-      cout << 1;
-    else if (i == n)
-      cout << 5;
-    else
-      cout << 0;
-  }
-
-  cout << el;
+  if (e1 == e2)
+    cout << "ANY" << el;
+  else if (e1 > e2)
+    cout << "FIRST" << el;
+  else
+    cout << "SECOND" << el;
 }
 
 int main(){
