@@ -13,6 +13,8 @@ using namespace std;
 */
 
 //Iterative solution
+//Time Complexity - O(log n)
+//space Complexity - O(1)
 // int binarySearch(int* arr, int l, int r, int x){
 //   while(l <= r){
 //     int mid = (l + r)/2;
@@ -30,6 +32,8 @@ using namespace std;
 // }
 
 //Recursive solution
+//Time Complexity - O(log n)
+//space Complexity - O(log n)
 int binarySearch(int* arr, int l, int r, int x){
   int mid = (l + r)/2;
 
