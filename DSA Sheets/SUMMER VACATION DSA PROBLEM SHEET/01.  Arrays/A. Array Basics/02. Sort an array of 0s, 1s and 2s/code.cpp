@@ -4,7 +4,6 @@ using namespace std;
 #define ll long long
 #define db double
 #define ld long double
-#define el "\n"
 
 void solution(){
 //Your Code Here!!
