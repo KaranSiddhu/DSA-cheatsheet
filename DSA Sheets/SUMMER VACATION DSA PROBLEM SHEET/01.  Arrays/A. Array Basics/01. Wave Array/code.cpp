@@ -11,7 +11,7 @@ using namespace std;
 1 2 3 4 5
 */
 
-//Time complexity: O(logn)
+//Time complexity: O(nlogn)
 void convertToWave(int n, vector<int>& arr){
   for(int i = 0; i < n-1; i += 2){
     int temp = arr[i];
