@@ -5,7 +5,7 @@ using namespace std;
 #define db double
 #define ld long double
 #define el "\n"
- 
+
 /*
 1
 5
@@ -18,28 +18,28 @@ using namespace std;
 1 2 3 4 5 6 7 8 9 10
 */
 
-//Time Complexity: O(N)
+// Time Complexity: O(N)
 vector<int> subarraySum(int arr[], int n, long long s){
   vector<int> ans;
-  
+
   int l = 0, r = 0, sum = 0;
 
   while (r < n){
-      sum += arr[r];
+    sum += arr[r];
 
-      //We use while because sum can be much greater than s and we may have to subtract l index multiple time
-      while(sum > s)
-        sum -= arr[l++];
-      
-      if(sum == s){
-        ans.push_back(l+1);
-        ans.push_back(r+1);
-        return ans;
-      }
-      r++;
+    // We use while because sum can be much greater than s and we may have to subtract l index multiple time
+    while (sum > s)
+      sum -= arr[l++];
+
+    if (sum == s){
+      ans.push_back(l + 1);
+      ans.push_back(r + 1);
+      return ans;
+    }
+    r++;
   }
   ans.push_back(-1);
-  return ans;  
+  return ans;
 }
 
 int main(){
@@ -54,13 +54,13 @@ int main(){
     int arr[n];
     for (int i = 0; i < n; i++)
       cin >> arr[i];
-    
+
     vector<int> ans = subarraySum(arr, n, s);
 
     cout << "Solution - ";
     for (int i = 0; i < ans.size(); i++)
       cout << ans[i] << " ";
-    
+
     cout << "\n";
   }
 
