@@ -1,7 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 #define ll long long
-#define ll long long
 #define db double
 #define ld long double
 #define el "\n"
