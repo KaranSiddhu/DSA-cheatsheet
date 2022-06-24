@@ -7,16 +7,32 @@ using namespace std;
 
 /*
 Input:-
+1
+5
+1 2 3 4 5
 
 
 Output:-
-
+5 4 
 */
 
 //Time Complexity: 
 vector<int> solution(int *arr, int n){
-  int max = INT_MIN, max2= INT_MIN;
+  int max = arr[0], max2= -1;
+  vector<int> ans;
 
+  for (int i = 0; i < n; i++){
+    if(arr[i] > max){
+      max2 = max;
+      max = arr[i];
+    }else if(arr[i] < max && max2 < arr[i])
+      max2 = arr[i];
+  }
+
+  ans.push_back(max);
+  ans.push_back(max2);
+
+  return ans;
 }
 
 int main(){
@@ -33,9 +49,9 @@ int main(){
     for (int i = 0; i < n; i++)
       cin >> arr[i];
 
-    vector<int> v = solution(arr, n);
+    vector<int> ans = solution(arr, n);
 
-    cout << "Solution - " << v[0] << " " << v[1] << el;
+    cout << "Max -> " << ans[0] << ", 2nd Max -> " << ans[1] << el;
     
   }
 
