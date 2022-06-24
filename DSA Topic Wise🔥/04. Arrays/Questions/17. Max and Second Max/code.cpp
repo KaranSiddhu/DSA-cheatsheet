@@ -11,12 +11,11 @@ Input:-
 5
 1 2 3 4 5
 
-
 Output:-
 5 4 
 */
 
-//Time Complexity: 
+//Time Complexity: O(n)
 vector<int> solution(int *arr, int n){
   int max = arr[0], max2= -1;
   vector<int> ans;
