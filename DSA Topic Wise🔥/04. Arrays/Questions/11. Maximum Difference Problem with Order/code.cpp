@@ -5,7 +5,7 @@ using namespace std;
 #define ld long double
 #define el "\n"
 
-//Time Complexity : O(n*n)
+//Time Complexity : O(n^2)
 // void solution(){
 //   int n = 7;
 //   int a[n] = {2, 3, 10, 6, 4, 8, 1};

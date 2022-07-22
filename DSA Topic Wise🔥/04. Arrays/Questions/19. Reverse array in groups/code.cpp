@@ -17,19 +17,12 @@ Output:-
 */
 
 void reverseInGroups(vector<ll> &arr, int n, int k){
+  for(int i = 0; i < n; i += k){
+    int left = i;
+    int right = min(i + k - 1, n-1);
 
-  int left = 0, right=k-1;
-  while(left < right){
-    swap(arr[left], arr[right]);
-    left++;
-    right--;
-  }
- 
-  left = k; right = n-1;
-  while(left < right){
-    swap(arr[left], arr[right]);
-    left++;
-    right--;
+    while(left < right) 
+      swap(arr[left++], arr[right--]);
   }
 }
 

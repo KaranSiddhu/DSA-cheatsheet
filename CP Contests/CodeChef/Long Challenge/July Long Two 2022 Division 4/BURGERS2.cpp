@@ -6,8 +6,22 @@ using namespace std;
 #define el "\n"
 
 void solution(){
-  //Your Code Here!!
-  cout << (50/4);
+  int x, y, n, r;
+  cin >> x >> y >> n >> r;
+  if ((x * n) > r){
+    cout << "-1" << el;
+    return;
+  }
+
+  if ((y * n) < r){
+    cout << 0 << " " << n << el;
+  }
+  else{
+    int j = (r - (x * n)) / (y - x);
+    int i = n - j;
+
+    cout << i << " " << j << el;
+  }
 }
 
 int main(){
