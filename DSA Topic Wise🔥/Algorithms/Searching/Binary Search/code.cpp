@@ -15,38 +15,38 @@ using namespace std;
 //Iterative solution
 //Time Complexity - O(log n)
 //space Complexity - O(1)
-// int binarySearch(int* arr, int l, int r, int x){
-//   while(l <= r){
-//     int mid = (l + r)/2;
+int binarySearch(int* arr, int l, int r, int x){
+  while(l <= r){
+    int mid = (l + r)/2;
 
-//     if(arr[mid] == x)
-//       return mid;
+    if(arr[mid] == x)
+      return mid;
     
-//     if(arr[mid] > x)
-//       r = mid-1;
-//     else
-//       l = mid+1;
-//   }
+    if(arr[mid] > x)
+      r = mid-1;
+    else
+      l = mid+1;
+  }
 
-//   return -1;
-// }
+  return -1;
+}
 
 //Recursive solution
 //Time Complexity - O(log n)
 //space Complexity - O(log n)
-int binarySearch(int* arr, int l, int r, int x){
-  int mid = (l + r)/2;
+// int binarySearch(int* arr, int l, int r, int x){
+//   int mid = (l + r)/2;
 
-  if(l > r)
-    return -1;
+//   if(l > r)
+//     return -1;
   
-  if(arr[mid] == x)
-    return mid;
-  else if(arr[mid] > x)
-    return binarySearch(arr, l, mid-1, x);
-  else
-    return binarySearch(arr, mid+1, r, x);
-}
+//   if(arr[mid] == x)
+//     return mid;
+//   else if(arr[mid] > x)
+//     return binarySearch(arr, l, mid-1, x);
+//   else
+//     return binarySearch(arr, mid+1, r, x);
+// }
 
 int main(){
   ios_base::sync_with_stdio(false);

@@ -5,8 +5,11 @@ using namespace std;
 #define ld long double
 #define el "\n"
 
-void solution(){
-  //Your Code Here!!
+int solution(int n){
+
+  if(n <= 9) return n;
+
+  return n%10 + solution(n/10);
 }
 
 int main(){
@@ -15,8 +18,11 @@ int main(){
 
   int t;
   cin >> t;
-  while (t--)
-    solution();
+  while (t--){
+    int n;
+    cin >> n;
+    cout << solution(n);
+  }
 
   return 0;
 }

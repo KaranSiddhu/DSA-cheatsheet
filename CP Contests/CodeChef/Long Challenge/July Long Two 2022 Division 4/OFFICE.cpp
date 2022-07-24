@@ -6,10 +6,14 @@ using namespace std;
 #define el "\n"
 
 void solution(){
-  //Your Code Here!!
+  int x, y;
+  cin >> x >> y;
+  int ans = (x * 4) + y;
+  cout << ans << el;
 }
 
-int main(){
+int main()
+{
   ios_base::sync_with_stdio(false);
   cin.tie(NULL);
 
