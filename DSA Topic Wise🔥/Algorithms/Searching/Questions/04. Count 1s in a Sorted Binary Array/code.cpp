@@ -9,24 +9,18 @@ using namespace std;
 Input -
 1
 7
-20
-1 10 10 10 20 20 40
+0 0 0 1 1 1 1 
 
 Output -
-2
+4
 */
-
-// Time Complexity : O(log n) 
-// Auxiliary Space : O(1) 
 
 int lastOccurrence(int *arr, int start, int end, int x){
   int ans = -1;
   while (start <= end){
     int mid = (start + end)/2;
 
-    if(arr[mid] > x)
-      end = mid - 1;
-    else if(arr[mid] < x)
+    if(arr[mid] < x)
       start = mid + 1;
     else{
       ans = mid;
@@ -41,9 +35,7 @@ int firstOccurrence(int *arr, int start, int end, int x){
   while (start <= end){
     int mid = (start + end)/2;
 
-    if(arr[mid] > x)
-      end = mid-1;
-    else if(arr[mid] < x) 
+    if(arr[mid] < x) 
       start = mid+1;
     else{
       ans = mid;
@@ -53,7 +45,11 @@ int firstOccurrence(int *arr, int start, int end, int x){
   return ans;
 }
 
-int solution(int *arr, int start, int end, int x){
+// Time Complexity : O(log n) 
+// Auxiliary Space : O(1) 
+int solution(int *arr, int start, int end){
+  int x = 1;
+
   int first = firstOccurrence(arr, start, end, x);
 
   if(first == -1)
@@ -69,14 +65,14 @@ int main(){
   int t;
   cin >> t;
   while (t--){
-    int n, x;
-    cin >> n >> x;
+    int n;
+    cin >> n;
 
     int arr[n];
     for (int i = 0; i < n; i++)
       cin >> arr[i];
 
-    cout << "Solution -> " << solution(arr, 0, n-1, x) << el;
+    cout << "Solution -> " << solution(arr, 0, n - 1) << el;
   }
 
   return 0;
