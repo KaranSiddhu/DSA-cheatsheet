@@ -14,6 +14,8 @@ Output -
 40
 */
 
+// Time Complexity : O(log n) 
+// Auxiliary Space : O(1) 
 int solution(){
   int n;
   cin >> n;
