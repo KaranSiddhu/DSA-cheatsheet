@@ -22,7 +22,7 @@ int main(){
   ios_base::sync_with_stdio(false);
   cin.tie(NULL);
  
-  int arr[] = {10, 20, 20, 30, 30, 30, 30};
+  int arr[] = {1, 1, 2, 2, 2, 3,3 };
   int size = sizeof(arr)/sizeof(arr[0]);
 
   for(int i = 0; i < size; i++)

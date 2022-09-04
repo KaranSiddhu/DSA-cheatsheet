@@ -13,7 +13,13 @@ Output -
 */
 
 void solution(){
-//Your Code Here!!
+    int x;
+    cin >> x;
+    
+    if(x < 300)
+        cout << "3000\n";
+    else
+        cout << x*10 << "\n";
 }
 
 int main(){

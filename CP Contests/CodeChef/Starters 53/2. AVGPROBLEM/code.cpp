@@ -12,11 +12,20 @@ Output -
 
 */
 
-void solution(){
-//Your Code Here!!
+void solution()
+{
+  int a, b, c;
+  cin >> a >> b >> c;
+  double ans = (double)(a + b) / 2;
+
+  if (ans > c)
+    cout << "YES\n";
+  else
+    cout << "NO\n";
 }
 
-int main(){
+int main()
+{
   ios_base::sync_with_stdio(false);
   cin.tie(NULL);
 
